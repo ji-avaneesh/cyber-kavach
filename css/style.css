@@ -1,0 +1,1082 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0a0f1f, #000);
+  color: #fff;
+}
+
+/* ================= NAVBAR ================= */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(2, 6, 23, 0.85); /* Dark Sleti Transparency */
+  backdrop-filter: blur(12px); /* Glass effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 2000; /* Sabse upar rahega */
+  transition: 0.4s;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  margin-left: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f97316; /* Theme Orange */
+}
+
+/* Mobile Menu Icon Style */
+.menu-toggle {
+  display: none; /* Desktop par nahi dikhega */
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* RESPONSIVE NAV (Mobile) */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 30px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #0b1120;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    display: none; /* Default band rahega */
+    border-bottom: 2px solid #f97316;
+  }
+
+  .nav-links.active {
+    display: flex; /* Click par khulega */
+  }
+
+  .nav-links a {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+}
+/* ================= HERO ================= */
+
+.vpn-hero {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b2b4f, #020b18);
+  padding: 120px 80px 60px;
+}
+
+.vpn-hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.vpn-hero-text h1 {
+  font-size: 44px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.vpn-hero-text h1 span {
+  color: #fbbf24;
+}
+
+.vpn-hero-text p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+.vpn-btn {
+    display: inline-block; /* Button ki tarah behave karega */
+    padding: 16px 40px;
+    border-radius: 50px; /* Rounded pill shape */
+    background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%); /* Orange to Yellow gradient */
+    color: #000; /* Text black rakha hai contrast ke liye */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3); /* Button ke niche soft glow */
+    cursor: pointer;
+    text-align: center;
+}
+
+.vpn-btn:hover {
+    transform: translateY(-3px); /* Upar uthega hover karne par */
+    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.5); /* Glow badh jayega */
+    background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%); /* Gradient reverse ho jayega */
+}
+
+.vpn-btn:active {
+    transform: translateY(-1px); /* Click karne par thoda niche jayega */
+}
+
+.vpn-hero-image img {
+  width: 100%;
+  max-width: 520px;
+  filter: drop-shadow(0 0 40px rgba(0, 140, 255, 0.4));
+}
+
+/* ================= STATS ================= */
+
+.vpn-stats {
+  margin: 80px auto 0;
+  max-width: 900px;
+  background: #b7ddb2;
+  border-radius: 14px;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #022c22;
+}
+
+.stat strong {
+  font-size: 26px;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* ================= MIX SECTION ================= */
+
+.vpn-mix-section {
+  background: #020617;
+  padding: 100px 80px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+/* ================= COMPARISON ================= */
+
+.comparison-section {
+  background: #020617;
+  padding: 100px 80px;
+}
+
+.compare-wrapper {
+  overflow-x: auto;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 24px;
+  min-width: 700px;
+}
+
+.compare-col {
+  background: #020617;
+  border: 1px solid #1f2933;
+  border-radius: 18px;
+  padding: 28px;
+  text-align: center;
+}
+
+.compare-col h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.features {
+  text-align: left;
+}
+
+.row {
+  padding: 14px 0;
+  border-bottom: 1px solid #1f2933;
+  font-size: 15px;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.yes {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.no {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.highlight {
+  border: 2px solid #f97316;
+  background: #020617;
+}
+
+.highlight .cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+  .comparison-section {
+    padding: 80px 20px;
+  }
+}
+
+/* ================= WHY ================= */
+
+/* ================= Why Choose Cyber Kavach ================= */
+
+.why-section {
+  background: #020617;
+  padding: 100px 80px;
+}
+
+.why-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.why-card {
+  background: #020617;
+  border: 1px solid #1f2933;
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.why-card h4 {
+  color: #f97316;
+  margin-bottom: 12px;
+}
+
+.why-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  border-color: #f97316;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-section {
+    padding: 80px 20px;
+  }
+
+  .why-title {
+    font-size: 32px;
+  }
+}
+
+
+/* ================= How it Works ================= */
+
+
+/* ================= HOW IT WORKS (Updated) ================= */
+
+.steps-section {
+  background: #020617; 
+  padding: 100px 80px;
+  text-align: center;
+  color: #fff;
+}
+
+.steps-section h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.subtitle {
+  color: #f97316; 
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-card {
+  background: #0b1120; 
+  border: 1px solid #1f2933;
+  padding: 35px 25px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.step-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.step-card p {
+  color: #94a3b8; 
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.step-card a {
+  color: #f97316;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+.step-card a:hover {
+  color: #fbbf24;
+  gap: 10px; 
+}
+
+
+.step-card:hover {
+  transform: translateY(-10px);
+  border-color: #f97316;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .steps-section {
+    padding: 80px 20px;
+  }
+  
+  .steps-section h1 {
+    font-size: 32px;
+  }
+}
+
+/* ================= PRICING REDESIGNED ================= */
+
+.pricing-section {
+  padding: 100px 80px;
+  background: #020617; 
+  text-align: center;
+}
+
+.pricing-grid {
+  max-width: 1150px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: center; 
+}
+
+/* Base Card Style */
+.pricing-section article {
+  background: #0b1120;
+  border: 1px solid #1f2933;
+  border-radius: 24px; 
+  padding: 50px 30px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Title & Price */
+.pricing-section article h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.pricing-section article .price {
+  font-size: 48px;
+  font-weight: 800;
+  color: #f97316; 
+  margin-bottom: 20px;
+}
+
+.pricing-section article .price span {
+  font-size: 16px;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Highlighted / Popular Card */
+.pricing-section article.highlight {
+  border: 2px solid #f97316;
+  background: #0f172a; 
+  transform: scale(1.05); 
+  box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
+}
+
+.pricing-section article.highlight::before {
+  content: "MOST POPULAR";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #f97316;
+  color: #000;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 0;
+  letter-spacing: 1px;
+}
+
+/* Hover Effect */
+.pricing-section article:hover {
+  transform: translateY(-12px);
+  border-color: #f97316;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Features List inside Card */
+.pricing-features {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+  text-align: left;
+}
+
+.pricing-features li {
+  color: #cbd5e1;
+  margin-bottom: 15px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  color: #22c55e;
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+/* Pricing Button */
+.price-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 2px solid #f97316;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.highlight .price-btn {
+  background: #f97316;
+  color: #000;
+}
+
+.price-btn:hover {
+  background: #f97316;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  .pricing-section article.highlight {
+    transform: scale(1);
+  }
+}
+
+
+
+
+/* ================= TESTIMONIALS (Modern Grid) ================= */
+
+.testimonials-section {
+  background: #020617; /* Aapka favorite dark background */
+  padding: 100px 80px;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.testi-card {
+  background: #0b1120;
+  border: 1px solid #1f2933;
+  padding: 40px 30px;
+  border-radius: 24px;
+  text-align: left;
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.testi-card:hover {
+  transform: translateY(-10px);
+  border-color: #f97316;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Middle card ko thoda alag dikhane ke liye (Optional) */
+.highlight-testi {
+  border-bottom: 4px solid #f97316;
+}
+
+.stars {
+  margin-bottom: 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.feedback {
+  color: #cbd5e1;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-img {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #000;
+  font-size: 14px;
+}
+
+.user-info h4 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+}
+
+.user-info span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 80px 20px;
+  }
+}
+
+
+
+
+/* ================= FAQ (Premium Accordion) ================= */
+
+.faq-section {
+  background: #020617; /* Same Dark Background */
+  padding: 100px 80px;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-wrapper {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.faq-item {
+  background: #0b1120;
+  border: 1px solid #1f2933;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: 0.3s all ease;
+}
+
+.faq-item:hover {
+  border-color: #f97316;
+  box-shadow: 0 5px 15px rgba(249, 115, 22, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 24px 30px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.faq-question i {
+  font-size: 14px;
+  color: #f97316;
+  transition: 0.4s;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0, 1, 0, 1);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.faq-answer p {
+  padding: 0 30px 24px;
+  color: #94a3b8;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Active State Styles */
+.faq-item.active {
+  border-color: #f97316;
+  background: #0f172a;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px; /* Bada value transition ke liye */
+  transition: all 0.4s cubic-bezier(1, 0, 1, 0);
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-section { padding: 80px 20px; }
+  .faq-question { padding: 20px; font-size: 16px; }
+}
+
+
+/* ================= CONTACT ================= */
+
+
+.contact-section {
+  background: #020617; 
+  padding: 100px 80px;
+  color: #fff;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-header .tag {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.contact-header h2 {
+  font-size: 42px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-header p {
+  color: #94a3b8;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- FORM SIDE --- */
+.contact-form {
+  background: #0b1120;
+  padding: 45px;
+  border-radius: 24px;
+  border: 1px solid #1f2933;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form h3 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #f97316; 
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(2, 6, 23, 0.5);
+  border: 1px solid #1f2933;
+  border-radius: 12px;
+  color: #fff;
+  font-family: inherit;
+  outline: none;
+  transition: 0.3s all ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  border-color: #f97316;
+  background: #020617;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.1);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #f97316, #f59e0b);
+  border: none;
+  border-radius: 12px;
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+  opacity: 0.95;
+}
+
+/* --- INFO SIDE --- */
+.contact-info h3 {
+  font-size: 28px;
+  margin-bottom: 35px;
+}
+
+.direct-list {
+  list-style: none;
+  padding: 0;
+}
+
+.direct-list li {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #cbd5e1;
+  font-size: 16px;
+}
+
+.map-card {
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed #334155;
+  border-radius: 20px;
+  padding: 30px;
+  transition: 0.3s;
+}
+
+.map-card:hover {
+  border-style: solid;
+  border-color: #f97316;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 150px;
+  background: #1e293b;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background-image: url('https://img.freepik.com/free-vector/dark-world-map-with-glowing-dots_1017-30372.jpg'); /* Map feel ke liye */
+  background-size: cover;
+}
+
+.office-info strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.office-info p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.office-info a {
+  color: #f97316;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.office-info a:hover {
+  padding-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-section { padding: 80px 20px; }
+  .contact-container { grid-template-columns: 1fr; }
+}
+/* ================= FOOTER ================= */
+
+
+  .footer {
+  
+    background: #0b1120; 
+    color: #fff;
+    padding: 80px 80px 30px;
+    font-family: "Segoe UI", sans-serif;
+    border-top: 1px solid #1f2933; 
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+  }
+
+  .footer-left {
+    max-width: 380px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #f97316; 
+
+  .logo-icon {
+    margin-right: 10px;
+    font-size: 24px;
+  }
+
+  .footer-left p {
+    line-height: 1.8;
+    color: #94a3b8; 
+    margin-bottom: 30px;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+  }
+
+  .contact strong {
+    color: #f97316; 
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: #fff;
+    position: relative;
+  }
+
+  /* Chhoti orange line heading ke niche */
+  .footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background: #f97316;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column li {
+    margin-bottom: 12px;
+  }
+
+  .footer-column a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 15px;
+  }
+
+  .footer-column a:hover {
+    color: #f97316; /* Hover par orange color */
+    padding-left: 5px; /* Chhota sa slide effect */
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #64748b;
+    letter-spacing: 0.5px;
+  }
+}
+/* ================= RESPONSIVE UPDATES ================= */
+
+@media (max-width: 900px) {
+
+  .footer {
+    padding: 60px 20px 30px;
+    position: relative;
+    z-index: 10; 
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contact {
+    align-items: center;
+  }
+}
