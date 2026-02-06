@@ -1,500 +1,938 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyber Kavach – Secure VPN</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/comparison.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Razorpay SDK - Load before scripts -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
+
 <body>
 
-  
-<!-- NAV-BAR -->
 
-<header id="navbar">
-  <div class="logo">🔥 Cyber Kavach</div>
-  
-  <div class="menu-toggle" id="mobile-menu">
-    <i class="fas fa-bars"></i>
-  </div>
+  <!-- NAV-BAR -->
 
-  <nav class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-
-<!-- HERO SECTION -->
-<section class="vpn-hero">
-  <div class="vpn-hero-container">
-
-    <!-- LEFT CONTENT -->
-    <div class="vpn-hero-text">
-      <h1>
-        Don’t waste time — access the
-        <span>NO-LIMIT</span> world of the web.
-      </h1>
-
-      <p>
-        Experience unrestricted web browsing with powerful global servers.
-        Choose your plan and enjoy fast, secure, and private internet access
-        without limits.
-      </p>
-
-      <a href="#pricing" class="vpn-btn">Get Started</a>
+  <header id="navbar">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Cyber Kavach Logo" class="logo-img">
+      <span>Cyber Kavach</span>
     </div>
 
-    <!-- RIGHT IMAGE -->
-    <div class="vpn-hero-image">
-      <img
-        src="assets/images/world-map.png"
-        alt="Global VPN server coverage map"
-        loading="lazy"
-      />
+    <div class="menu-toggle" id="mobile-menu">
+      <i class="fas fa-bars"></i>
     </div>
 
-  </div>
+    <nav class="nav-links">
+      <a href="#features">
+        <i class="fas fa-shield-alt"></i>
+        <span>Protection</span>
+      </a>
+      <a href="#pricing">
+        <i class="fas fa-gem"></i>
+        <span>Premium</span>
+      </a>
+      <a href="#contact">
+        <i class="fas fa-info-circle"></i>
+        <span>Support</span>
+      </a>
+    </nav>
 
-  <!-- STATS BAR -->
-  <div class="vpn-stats">
-    <div class="stat">
-      <strong>+10K</strong>
-      <span>Users</span>
+    <div class="nav-actions">
+      <a href="#" class="nav-login"
+        onclick="document.getElementById('auth-modal').style.display='flex'; showAuth('login'); return false;">Login</a>
+      <a href="#pricing" class="nav-btn-pro">Get Pro</a>
     </div>
-
-    <div class="divider"></div>
-
-    <div class="stat">
-      <strong>+30</strong>
-      <span>Locations</span>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="stat">
-      <strong>+40</strong>
-      <span>Servers</span>
-    </div>
-  </div>
-</section>
+  </header>
 
 
-<!-- FEATURES -->
+  <!-- HERO SECTION -->
+  <section class="vpn-hero">
+    <div class="vpn-hero-container">
 
+      <!-- LEFT CONTENT -->
+      <div class="vpn-hero-text">
+        <h1>
+          Your Digital Shield in a
+          <span>BORDERLESS</span> World.
+        </h1>
 
+        <p>
+          Cyber Kavach delivers military-grade encryption and blazing-fast servers
+          across 120+ locations. Browse freely, stream securely, and protect your
+          privacy with India's most trusted VPN platform.
+        </p>
 
-<!-- HOW IT WORKS -->
-<section class="steps-section">
-  <p class="subtitle">HOW IT WORKS</p>
-  <h1>Protect your online presence effortlessly</h1>
-
-  <div class="steps-grid">
-
-    <div class="step-card">
-      <img src="assets/images/hiw1.jpg" />
-      <h3>Step 1: download Fire Kavach</h3>
-      <p>Download the Fire Kavach app.</p>
-      <a href="#">Learn more</a>
-    </div>
-
-    <div class="step-card">
-      <img src="assets/images/hiw2.jpg" />
-      <h3>Step 2: connect to server</h3>
-      <p>Select a server location.</p>
-      <a href="#">Learn more</a>
-    </div>
-
-    <div class="step-card">
-      <img src="assets/images/hiw3.jpg" />
-      <h3>Step 3: browse securely</h3>
-      <p>Start browsing with confidence.</p>
-      <a href="#">Learn more</a>
-    </div>
-
-    <div class="step-card">
-      <img src="assets/images/hiw4.jpg" />
-      <h3>Step 4: manage your settings</h3>
-      <p>Customize your VPN settings.</p>
-      <a href="#">Learn more</a>
-    </div>
-
-  </div>
-</section>
-<!--  -->
-
-
-
-<!-- Pricing Section   -->
-
- <section id="pricing" class="pricing-section">
-  <p class="subtitle">Choose Your Shield</p>
-  <h2 class="section-title">Transparent Pricing Plans</h2>
-
-  <div class="pricing-grid">
-    
-    <article class="glass-card">
-      <h3>Free</h3>
-      <div class="price">$0<span>/mo</span></div>
-      <ul class="pricing-features">
-        <li>1 Device Support</li>
-        <li>Standard Speed</li>
-        <li>3 Server Locations</li>
-        <li>No-logs Policy</li>
-      </ul>
-      <button class="price-btn">Start Free</button>
-    </article>
-
-    <article class="glass-card highlight">
-      <h3>Ultimate</h3>
-      <div class="price">$9.99<span>/mo</span></div>
-      <ul class="pricing-features">
-        <li>Unlimited Devices</li>
-        <li>Ultra-Fast 10Gbps</li>
-        <li>120+ Global Locations</li>
-        <li>24/7 Priority Support</li>
-      </ul>
-      <button class="price-btn">Go Ultimate</button>
-    </article>
-
-    <article class="glass-card">
-      <h3>Pro</h3>
-      <div class="price">$4.99<span>/mo</span></div>
-      <ul class="pricing-features">
-        <li>5 Devices Support</li>
-        <li>High-Speed Servers</li>
-        <li>50+ Server Locations</li>
-        <li>Ad & Malware Blocker</li>
-      </ul>
-      <button class="price-btn">Go Pro</button>
-    </article>
-
-  </div>
-</section>
-<!--  -->
-
-
-
-<!-- WHY CHOOSE CYBER KAVACH -->
-<section class="why-section">
-  <h2 class="why-title">Why Choose Cyber Kavach</h2>
-
-  <div class="why-grid">
-    <div class="why-card">
-      <h4>Global Servers</h4>
-      <p>15,000+ secure servers across 120+ countries.</p>
-    </div>
-
-    <div class="why-card">
-      <h4>Ultra Fast Speed</h4>
-      <p>10 Gbps servers with speed accelerator up to 400%.</p>
-    </div>
-
-    <div class="why-card">
-      <h4>Total Privacy</h4>
-      <p>Strict no-logs policy backed by strong privacy laws.</p>
-    </div>
-
-    <div class="why-card">
-      <h4>Malware Protection</h4>
-      <p>Blocks ads, trackers, and malicious websites.</p>
-    </div>
-
-    <div class="why-card">
-      <h4>Streaming Access</h4>
-      <p>Access global content securely without limits.</p>
-    </div>
-
-    <div class="why-card">
-      <h4>Trusted Worldwide</h4>
-      <p>Millions of users trust Cyber Kavach every day.</p>
-    </div>
-  </div>
-</section>
-
-
- <!-- WHY CYBER KAVACH IS BETTER -->
-<section class="comparison-section">
-  <h2 class="section-title">Why Cyber Kavach is Better</h2>
-
-  <div class="compare-wrapper">
-    <div class="compare-grid">
-
-      <!-- FEATURES -->
-      <div class="compare-col features">
-        <div class="row">Open-source audited</div>
-        <div class="row">No-logs policy</div>
-        <div class="row">Ad blocker</div>
-        <div class="row">Malware protection</div>
-        <div class="row">Speed accelerator</div>
-        <div class="row">Jurisdiction</div>
-        <div class="row">Owned by</div>
+        <div class="hero-buttons">
+          <a href="#pricing" class="vpn-btn">Get Started</a>
+          <a href="#" id="add-extension-btn" class="vpn-btn btn-secondary">
+            <i class="fab fa-chrome"></i>
+            Add Extension
+          </a>
+        </div>
       </div>
 
-      <!-- CYBER KAVACH -->
-      <div class="compare-col highlight">
-        <h4>Cyber Kavach</h4>
-        <div class="row yes">✔</div>
-        <div class="row yes">✔</div>
-        <div class="row yes">✔</div>
-        <div class="row yes">✔</div>
-        <div class="row yes">✔</div>
-        <div class="row">Mumbai India</div>
-        <div class="row">INDIA</div>
-        <a href="#pricing" class="cta-btn">Get Cyber Kavach</a>
-      </div>
-
-      <!-- OTHERS -->
-      <div class="compare-col">
-        <h4>Other VPNs</h4>
-        <div class="row no">✖</div>
-        <div class="row no">✖</div>
-        <div class="row yes">✔</div>
-        <div class="row no">✖</div>
-        <div class="row no">✖</div>
-        <div class="row">Various</div>
-        <div class="row">Private</div>
+      <!-- RIGHT IMAGE -->
+      <div class="vpn-hero-image">
+        <img src="assets/images/world-map.png" alt="Global VPN server coverage map" loading="lazy" />
       </div>
 
     </div>
-  </div>
-</section>
+
+    <!-- STATS BAR -->
+    <div class="vpn-stats">
+      <div class="stat">
+        <strong>+10K</strong>
+        <span>Users</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="stat">
+        <strong>+30</strong>
+        <span>Locations</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="stat">
+        <strong>+40</strong>
+        <span>Servers</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FEATURES -->
 
 
 
+  <!-- HOW IT WORKS -->
+  <section class="steps-section">
+    <p class="subtitle">HOW IT WORKS</p>
+    <h1>Protect your online presence effortlessly</h1>
+
+    <div class="steps-grid">
+
+      <div class="step-card">
+        <img src="assets/images/hiw1.jpg" />
+        <h3>Step 1: download Fire Kavach</h3>
+        <p>Download the Fire Kavach app.</p>
+        <a href="#">Learn more</a>
+      </div>
+
+      <div class="step-card">
+        <img src="assets/images/hiw2.jpg" />
+        <h3>Step 2: connect to server</h3>
+        <p>Select a server location.</p>
+        <a href="#">Learn more</a>
+      </div>
+
+      <div class="step-card">
+        <img src="assets/images/hiw3.jpg" />
+        <h3>Step 3: browse securely</h3>
+        <p>Start browsing with confidence.</p>
+        <a href="#">Learn more</a>
+      </div>
+
+      <div class="step-card">
+        <img src="assets/images/hiw4.jpg" />
+        <h3>Step 4: manage your settings</h3>
+        <p>Customize your VPN settings.</p>
+        <a href="#">Learn more</a>
+      </div>
+
+    </div>
+  </section>
+  <!--  -->
 
 
-<!-- Testimonials  -->
 
-<section class="testimonials-section">
-  <div class="container">
-    <p class="subtitle">Wall of Love</p>
-    <h2 class="section-title">What Our Global Users Say</h2>
-    
-    <div class="testimonials-grid">
-      <div class="testi-card">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="feedback">"Cyber Kavach is incredibly fast. I've used many VPNs before, but the speed accelerator here is on another level. Highly recommended for gamers!"</p>
-        <div class="user-info">
-          <div class="user-img">RK</div>
-          <div>
-            <h4>Rahul Kumar</h4>
-            <span>Verified User</span>
+  <!-- PRICING SECTION (REDESIGNED) -->
+  <section id="pricing" class="pricing-section-new">
+    <div class="pricing-wrapper">
+
+      <!-- Section Header -->
+      <div class="pricing-header">
+        <span class="pricing-tag">PRICING PLANS</span>
+        <h2 class="pricing-title">Choose Your Perfect Plan</h2>
+        <p class="pricing-subtitle">Flexible options for everyone — from individuals to large enterprises.</p>
+
+        <!-- PLAN TOGGLE -->
+        <div class="plan-toggle-container" style="display: flex; justify-content: center; margin-top: 30px;">
+          <div class="toggle-bg"
+            style="background: rgba(255,255,255,0.1); padding: 5px; border-radius: 50px; display: flex; position: relative;">
+            <button class="toggle-btn active" onclick="switchPlan('user')" id="btn-user"
+              style="background: #f97316; color: #fff; border: none; padding: 10px 30px; border-radius: 40px; cursor: pointer; font-weight: 600; transition: 0.3s;">User
+              & Premium</button>
+            <button class="toggle-btn" onclick="switchPlan('enterprise')" id="btn-enterprise"
+              style="background: transparent; color: #cbd5e1; border: none; padding: 10px 30px; border-radius: 40px; cursor: pointer; font-weight: 600; transition: 0.3s;">Enterprise</button>
           </div>
         </div>
       </div>
 
-      <div class="testi-card highlight-testi">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="feedback">"The privacy features are top-notch. Being based in Switzerland gives me peace of mind. The UI is clean, dark, and very easy to navigate."</p>
-        <div class="user-info">
-          <div class="user-img">SJ</div>
+      <!-- USER PLANS GRID -->
+      <div class="pricing-cards-grid" id="user-plans">
+
+        <!-- FREE USER -->
+        <div class="pricing-card">
+          <div class="plan-header">
+            <h3 class="plan-name">Free User</h3>
+            <p class="plan-description">7 Days Demo Access</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">₹</span><span class="amount">0</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> <strong>7 Days Validity</strong></li>
+            <li><i class="fas fa-check"></i> 1 Device</li>
+            <li><i class="fas fa-check"></i> 20 Requests / Day</li>
+            <li><i class="fas fa-check"></i> Basic Support</li>
+          </ul>
+          <button class="plan-btn free-btn buy-btn" data-amount="0" data-plan="free">Get Started</button>
+        </div>
+
+        <!-- PREMIUM 1 MONTH -->
+        <div class="pricing-card">
+          <div class="plan-header">
+            <h3 class="plan-name">Premium Monthly</h3>
+            <p class="plan-description">Short term flexible</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">₹</span><span class="amount">199</span><span class="period">/mo</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> <strong>30 Days Validity</strong></li>
+            <li><i class="fas fa-check"></i> 2 Devices</li>
+            <li><i class="fas fa-check"></i> 50 Requests / Day</li>
+            <li><i class="fas fa-check"></i> Priority Support</li>
+          </ul>
+          <button class="plan-btn buy-btn" data-amount="199" data-plan="premium-1m">Buy Now</button>
+        </div>
+
+        <!-- PREMIUM 6 MONTHS -->
+        <div class="pricing-card featured">
+          <div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>
+          <div class="plan-header">
+            <h3 class="plan-name">Premium 6 Months</h3>
+            <p class="plan-description">Balanced choice</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">₹</span><span class="amount">999</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> <strong>180 Days Validity</strong></li>
+            <li><i class="fas fa-check"></i> 3 Devices</li>
+            <li><i class="fas fa-check"></i> 75 Requests / Day</li>
+            <li><i class="fas fa-check"></i> Priority Support</li>
+          </ul>
+          <button class="plan-btn featured-btn buy-btn" data-amount="999" data-plan="premium-6m">Buy Now</button>
+        </div>
+
+        <!-- PREMIUM 1 YEAR -->
+        <div class="pricing-card best-value">
+          <div class="savings-badge">BEST VALUE</div>
+          <div class="plan-header">
+            <h3 class="plan-name">Premium 1 Year</h3>
+            <p class="plan-description">Maximum savings</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">₹</span><span class="amount">1,799</span><span class="period">/yr</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> <strong>365 Days Validity</strong></li>
+            <li><i class="fas fa-check"></i> 5 Devices</li>
+            <li><i class="fas fa-check"></i> 100 Requests / Day</li>
+            <li><i class="fas fa-check"></i> VIP Support</li>
+          </ul>
+          <button class="plan-btn value-btn buy-btn" data-amount="1799" data-plan="premium-1y">Buy Now</button>
+        </div>
+
+      </div>
+
+      <!-- ENTERPRISE PLANS GRID (Hidden Initially) -->
+      <div class="pricing-cards-grid" id="enterprise-plans" style="display: none;">
+
+        <!-- BASIC ENTERPRISE -->
+        <div class="pricing-card">
+          <div class="plan-header">
+            <h3 class="plan-name">Basic Corp</h3>
+            <p class="plan-description">Small Teams</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">₹</span><span class="amount">25,000</span><span class="period">/yr</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-building"></i> <strong>25 Devices</strong></li>
+            <li><i class="fas fa-bolt"></i> 10k Requests / Day</li>
+            <li><i class="fas fa-check"></i> Admin Dashboard</li>
+            <li><i class="fas fa-check"></i> Email Support</li>
+          </ul>
+          <button class="plan-btn buy-btn" data-amount="25000" data-plan="ent-basic">Choose Basic</button>
+        </div>
+
+        <!-- ADVANCED ENTERPRISE -->
+        <div class="pricing-card featured">
+          <div class="plan-header">
+            <h3 class="plan-name">Advanced Corp</h3>
+            <p class="plan-description">Growing Business</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">₹</span><span class="amount">75,000</span><span class="period">/yr</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-building"></i> <strong>100 Devices</strong></li>
+            <li><i class="fas fa-bolt"></i> 50k Requests / Day</li>
+            <li><i class="fas fa-check"></i> Dedicated Manager</li>
+            <li><i class="fas fa-check"></i> Priority Support</li>
+          </ul>
+          <button class="plan-btn featured-btn buy-btn" data-amount="75000" data-plan="ent-adv">Choose Advanced</button>
+        </div>
+
+        <!-- PREMIUM ENTERPRISE -->
+        <div class="pricing-card best-value">
+          <div class="plan-header">
+            <h3 class="plan-name">Premium Corp</h3>
+            <p class="plan-description">Large Scale</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">₹</span><span class="amount">1.5L+</span><span class="period">/yr</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-building"></i> <strong>500+ Devices</strong></li>
+            <li><i class="fas fa-bolt"></i> 150k+ Requests / Day</li>
+            <li><i class="fas fa-check"></i> Custom Solutions</li>
+            <li><i class="fas fa-check"></i> 24/7 VIP Support</li>
+          </ul>
+          <button class="plan-btn value-btn"
+            onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Contact Sales</button>
+        </div>
+
+      </div>
+
+      <!-- Custom Plan Note -->
+      <div style="text-align: center; margin-top: 30px; color: #94a3b8;">
+        <p>Looking for a custom plan? <a href="#contact" style="color: #f97316;">Contact us</a> for tailored solutions.
+        </p>
+        <p style="font-size: 13px; margin-top: 5px;">Add-ons: Extra User Device (+₹99/yr) | Extra Enterprise Device
+          (+₹2000/10 devs)</p>
+      </div>
+
+      <!-- Money Back Guarantee -->
+      <div class="guarantee-section">
+        <div class="guarantee-content">
+          <i class="fas fa-shield-alt"></i>
           <div>
-            <h4>Sarah Jenkins</h4>
-            <span>Tech Enthusiast</span>
+            <h4>30-Day Money-Back Guarantee</h4>
+            <p>Not satisfied? Get a full refund within 30 days, no questions asked.</p>
           </div>
         </div>
       </div>
 
-      <div class="testi-card">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="feedback">"Finally a VPN that actually unblocks everything. Streamed my favorite shows in 4K without a single buffer. Best investment this year."</p>
-        <div class="user-info">
-          <div class="user-img">AM</div>
-          <div>
-            <h4>Arjun Mehta</h4>
-            <span>Digital Nomad</span>
+    </div>
+
+    <!-- INLINE SCRIPT FOR TABS -->
+    <script>
+      function switchPlan(type) {
+        const userPlans = document.getElementById('user-plans');
+        const entPlans = document.getElementById('enterprise-plans');
+        const btnUser = document.getElementById('btn-user');
+        const btnEnterprise = document.getElementById('btn-enterprise');
+
+        if (type === 'user') {
+          userPlans.style.display = 'grid'; // Grid like before
+          entPlans.style.display = 'none';
+          btnUser.style.background = '#f97316';
+          btnUser.style.color = '#fff';
+          btnEnterprise.style.background = 'transparent';
+          btnEnterprise.style.color = '#cbd5e1';
+        } else {
+          userPlans.style.display = 'none';
+          entPlans.style.display = 'grid'; // Grid like before
+          btnEnterprise.style.background = '#f97316';
+          btnEnterprise.style.color = '#fff';
+          btnUser.style.background = 'transparent';
+          btnUser.style.color = '#cbd5e1';
+        }
+      }
+    </script>
+  </section>
+
+
+
+
+
+  <!-- WHY CHOOSE CYBER KAVACH -->
+  <section class="why-section">
+    <h2 class="why-title">Why Choose Cyber Kavach</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <h4>Global Servers</h4>
+        <p>15,000+ secure servers across 120+ countries.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Ultra Fast Speed</h4>
+        <p>10 Gbps servers with speed accelerator up to 400%.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Total Privacy</h4>
+        <p>Strict no-logs policy backed by strong privacy laws.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Malware Protection</h4>
+        <p>Blocks ads, trackers, and malicious websites.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Streaming Access</h4>
+        <p>Access global content securely without limits.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Trusted Worldwide</h4>
+        <p>Millions of users trust Cyber Kavach every day.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY CYBER KAVACH IS BETTER -->
+  <section class="comparison-section-premium">
+    <div class="comparison-wrapper">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <h2 class="section-title">Why Cyber Kavach is Better</h2>
+        <p class="pricing-subtitle">Don't settle for less. Compare and see the difference.</p>
+      </div>
+
+      <table class="premium-compare-table">
+        <thead>
+          <tr>
+            <th>Features</th>
+            <th class="col-highlight header-highlight">Cyber Kavach</th>
+            <th>Other VPNs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="feature-row"><i class="fas fa-code"></i> Open-source audited</div>
+            </td>
+            <td class="col-highlight"><i class="fas fa-check-circle status-icon yes"></i></td>
+            <td><i class="fas fa-times-circle status-icon no"></i></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="feature-row"><i class="fas fa-file-contract"></i> No-logs policy</div>
+            </td>
+            <td class="col-highlight"><i class="fas fa-check-circle status-icon yes"></i></td>
+            <td><i class="fas fa-times-circle status-icon no"></i></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="feature-row"><i class="fas fa-ban"></i> Ad blocker</div>
+            </td>
+            <td class="col-highlight"><i class="fas fa-check-circle status-icon yes"></i></td>
+            <td><i class="fas fa-check-circle status-icon yes"></i></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="feature-row"><i class="fas fa-shield-virus"></i> Malware protection</div>
+            </td>
+            <td class="col-highlight"><i class="fas fa-check-circle status-icon yes"></i></td>
+            <td><i class="fas fa-times-circle status-icon no"></i></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="feature-row"><i class="fas fa-bolt"></i> Speed accelerator</div>
+            </td>
+            <td class="col-highlight"><i class="fas fa-check-circle status-icon yes"></i></td>
+            <td><i class="fas fa-times-circle status-icon no"></i></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="feature-row"><i class="fas fa-globe"></i> Jurisdiction</div>
+            </td>
+            <td class="col-highlight" style="font-weight: 700;">Mumbai, India 🇮🇳</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="feature-row"><i class="fas fa-building"></i> Owned by</div>
+            </td>
+            <td class="col-highlight" style="font-weight: 700;">INDIA</td>
+            <td>Private</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="col-highlight" style="padding-bottom: 40px;">
+              <a href="#pricing" class="table-cta-btn">Get Cyber Kavach</a>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Testimonials  -->
+
+  <section class="testimonials-section">
+    <div class="container">
+      <p class="subtitle">Wall of Love</p>
+      <h2 class="section-title">What Our Global Users Say</h2>
+
+      <div class="testimonials-grid">
+        <div class="testi-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="feedback">"Cyber Kavach is incredibly fast. I've used many VPNs before, but the speed accelerator
+            here is on another level. Highly recommended for gamers!"</p>
+          <div class="user-info">
+            <div class="user-img">RK</div>
+            <div>
+              <h4>Rahul Kumar</h4>
+              <span>Verified User</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card highlight-testi">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="feedback">"The privacy features are top-notch. Being based in Switzerland gives me peace of mind.
+            The UI is clean, dark, and very easy to navigate."</p>
+          <div class="user-info">
+            <div class="user-img">SJ</div>
+            <div>
+              <h4>Sarah Jenkins</h4>
+              <span>Tech Enthusiast</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="feedback">"Finally a VPN that actually unblocks everything. Streamed my favorite shows in 4K without
+            a single buffer. Best investment this year."</p>
+          <div class="user-info">
+            <div class="user-img">AM</div>
+            <div>
+              <h4>Arjun Mehta</h4>
+              <span>Digital Nomad</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!--  -->
+  </section>
+  <!--  -->
 
-<!-- FAQ Section -->
+  <!-- FAQ Section -->
 
-<section id="faq" class="faq-section">
-  <div class="faq-container">
-    <p class="subtitle">Support Center</p>
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    
-    <div class="faq-wrapper">
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Is Cyber Kavach really a no-log VPN?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <p>Yes, absolutely. We are headquartered in Switzerland, which has the world's strongest privacy laws. We do not track, collect, or share any of your browsing data or IP history.</p>
+  <section id="faq" class="faq-section">
+    <div class="faq-container">
+      <p class="subtitle">Support Center</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="faq-wrapper">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is Cyber Kavach really a no-log VPN?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, absolutely. We are headquartered in Switzerland, which has the world's strongest privacy laws. We do
+              not track, collect, or share any of your browsing data or IP history.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Can I use it on multiple devices?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <p>Depending on your plan, you can connect from 5 to unlimited devices simultaneously. We have apps for Android, iOS, Windows, macOS, and Linux.</p>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I use it on multiple devices?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Depending on your plan, you can connect from 5 to unlimited devices simultaneously. We have apps for
+              Android, iOS, Windows, macOS, and Linux.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Does it work with streaming services?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <p>Yes! Our ultra-fast global servers are optimized to unblock major streaming platforms, allowing you to watch your favorite content in 4K without buffering.</p>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does it work with streaming services?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Our ultra-fast global servers are optimized to unblock major streaming platforms, allowing you to
+              watch your favorite content in 4K without buffering.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT (FIXED ID) -->
+  <!-- CONTACT SECTION (REDESIGNED) -->
+  <section id="contact" class="contact-section-new">
+    <div class="contact-wrapper">
 
-<section id="contact" class="contact-section">
-  <div class="contact-header">
-    <span class="tag">Contact us</span>
-    <h2>Get in Touch with Our Team</h2>
-    <p>
-      We're here to answer your questions, discuss your project, and help you
-      find the best solutions for your software needs.
-    </p>
-  </div>
+      <!-- Section Header -->
+      <div class="contact-header-new">
+        <span class="section-tag">GET IN TOUCH</span>
+        <h2 class="section-title-new">We're Here to Help</h2>
+        <p class="section-description">Have questions about our VPN service? Need technical support? Want to discuss
+          enterprise solutions? Our team is ready to assist you.</p>
+      </div>
 
-  <div class="contact-container">
-    <div class="contact-form">
-      <h3>Let’s Talk About Your Project</h3>
+      <div class="contact-content-grid">
 
-      <form>
-        <div class="form-group">
-          <label>Name</label>
-          <input type="text" placeholder="Your full name">
+        <!-- Left Column: Form + Map -->
+        <div class="contact-left-column">
+          <div class="contact-form-card">
+            <div class="card-header">
+              <i class="fas fa-paper-plane"></i>
+              <h3>Send us a Message</h3>
+            </div>
+
+            <form id="contact-form" class="modern-contact-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label><i class="fas fa-user"></i> Full Name</label>
+                  <input type="text" name="name" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-field">
+                  <label><i class="fas fa-envelope"></i> Email Address</label>
+                  <input type="email" name="email" placeholder="john@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label><i class="fas fa-tag"></i> Subject</label>
+                <select name="subject" required>
+                  <option value="">Select a topic...</option>
+                  <option value="support">Technical Support</option>
+                  <option value="billing">Billing & Payment</option>
+                  <option value="sales">Sales Inquiry</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label><i class="fas fa-comment-alt"></i> Message</label>
+                <textarea name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Integrated Compact Map -->
+          <div class="contact-map-card-integrated">
+            <div class="map-card-header-compact">
+              <i class="fas fa-map-marked-alt"></i>
+              <span>Our Location</span>
+            </div>
+            <div class="integrated-map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160991804!2d72.71637344999999!3d19.0759837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sNavi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1706089234567!5m2!1sen!2sin"
+                width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy">
+              </iframe>
+            </div>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="We’ll get back to you here">
+        <!-- Contact Information Cards -->
+        <div class="contact-info-cards">
+
+          <!-- Quick Contact Card -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h4>24/7 Support</h4>
+            <p>Our support team is available round the clock to help you.</p>
+            <div class="info-details">
+              <a href="tel:+918001011019" class="info-link">
+                <i class="fas fa-phone-alt"></i> 1-800-201-1019
+              </a>
+              <a href="mailto:support@cyberkavach.com" class="info-link">
+                <i class="fas fa-envelope"></i> support@cyberkavach.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Live Chat Card -->
+          <div class="info-card highlight-card">
+            <div class="info-card-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h4>Live Chat</h4>
+            <p>Get instant answers from our support team.</p>
+            <button class="live-chat-btn" onclick="alert('Live chat feature coming soon!')">
+              <i class="fas fa-comment-dots"></i> Start Chat Now
+            </button>
+          </div>
+
+          <!-- Office Location Card -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h4>Our Office</h4>
+            <p class="office-address">
+              Suite 116, Vashi<br>
+              Navi Mumbai, 400703<br>
+              Maharashtra, India
+            </p>
+            <div class="office-hours">
+              <i class="fas fa-clock"></i> Mon-Fri: 9 AM - 6 PM IST
+            </div>
+          </div>
+
+          <!-- Social Media Card -->
+          <div class="info-card social-card">
+            <div class="info-card-icon">
+              <i class="fas fa-share-alt"></i>
+            </div>
+            <h4>Follow Us</h4>
+            <p>Stay updated with our latest news and offers</p>
+            <div class="social-links-grid">
+              <a href="#" class="social-link-btn facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link-btn twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link-btn linkedin">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-link-btn instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="trust-indicators">
+        <div class="trust-item">
+          <i class="fas fa-reply-all"></i>
+          <span>Average response time: <strong>2 hours</strong></span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-users"></i>
+          <span><strong>10,000+</strong> satisfied customers</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-star"></i>
+          <span>Rated <strong>4.8/5</strong> on Trustpilot</span>
         </div>
 
-        <div class="form-group">
-          <label>Company Name</label>
-          <input type="text" placeholder="Let us know who you represent">
-        </div>
+      </div>
 
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" placeholder="What’s this about?">
-        </div>
+    </div>
+  </section>
 
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Tell us how we can help"></textarea>
-        </div>
 
-        <button type="submit">Send Message</button>
+
+  <!-- signup login section  -->
+
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+
+      <div class="auth-tabs">
+        <button class="tab-btn active" onclick="showAuth('login')">Login</button>
+        <button class="tab-btn" onclick="showAuth('signup')">Sign Up</button>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <h3>Welcome Back</h3>
+
+        <!-- Google Login Button -->
+        <button type="button" class="google-btn" onclick="handleGoogleLogin()">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+          Sign in with Google
+        </button>
+
+        <div class="divider-text">OR</div>
+
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="vpn-btn">Login to Kavach</button>
+        <a href="../forgot-password.html" class="forgot-pass">Forgot Password?</a>
+      </form>
+
+      <form id="signup-form" class="auth-form" style="display:none;">
+        <h3>Create Account</h3>
+
+        <!-- Google Login Button -->
+        <button type="button" class="google-btn" onclick="handleGoogleLogin()">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+          Sign up with Google
+        </button>
+
+        <div class="divider-text">OR</div>
+
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Create Password" required>
+        <button type="submit" class="vpn-btn">Secure My Web</button>
       </form>
     </div>
-
-    <div class="contact-info">
-      <h3>Prefer a Direct Approach?</h3>
-      <ul class="direct-list">
-        <li>📞 +62-8234-5678-8901</li>
-        <li>✉ contact@brandingplay.com</li>
-        <li>⏰ Monday to Friday, 9 AM - 6 PM (GMT)</li>
-      </ul>
-
-      <div class="map-card">
-        <div class="map-placeholder"></div>
-        <div class="office-info">
-          <strong>Visit Our Office</strong>
-          <p>123 SaaS Street, Innovation City, Techland 56789</p>
-          <a href="#">Get a Direction →</a>
-        </div>
-      </div>
-    </div>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-container">
+  <!-- QR PAYMENT MODAL -->
+  <div id="payment-modal" class="modal">
+    <div class="modal-content" style="max-width: 400px; text-align: center;">
+      <span class="close-payment"
+        style="position: absolute; right: 20px; top: 15px; font-size: 28px; cursor: pointer; color: #cbd5e1;">&times;</span>
 
-    <!-- Left Section -->
-    <div class="footer-left">
-      <div class="footer-logo">
-      <span class="logo-icon">🔥</span>
-      <span class="logo-text">cyber-Kavach</span>
-    </div>
+      <h3 style="margin-bottom: 20px; font-size: 24px;">Scan & Pay</h3>
 
+      <div style="background: #fff; padding: 15px; border-radius: 12px; display: inline-block; margin-bottom: 20px;">
+        <img src="assets/images/qr-code.png" alt="Scan QR" style="width: 200px; height: 200px;">
+      </div>
 
-      <p>
-        Navi Mumbai<br>
-        Suite 116 #1040<br>
-        Cornelius, NC 28031<br>
-        India 
+      <p style="color: #94a3b8; font-size: 14px; margin-bottom: 20px;">
+        Scan with GPay, PhonePe or Paytm to upgrade. <br>
+        <strong id="pay-amount-display" style="color: #f97316; font-size: 18px;">Amount: ₹999</strong>
       </p>
 
-      <div class="contact">
-        <div>
-          <strong>Phone number</strong><br>
-          1-800-201-1019
+      <form id="manual-payment-form" class="auth-form">
+        <input type="text" name="transaction_id" placeholder="Enter Transaction ID / UTR" required
+          style="text-align: center; letter-spacing: 1px;">
+        <button type="submit" class="vpn-btn">Verify Payment</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <!--  -->
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Company Info Section -->
+      <div class="footer-section footer-brand">
+        <div class="footer-logo">
+          <span class="logo-icon">🔥</span>
+          <span class="logo-text">Cyber Kavach</span>
         </div>
-        <div>
-          <strong>Email</strong><br>
-          support@cyberkavach.com
+        <p class="footer-tagline">Your ultimate shield for secure and private internet browsing. Protect your digital
+          life with military-grade encryption.</p>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Product Links -->
+      <div class="footer-section">
+        <h4 class="footer-heading">Product</h4>
+        <ul class="footer-links">
+          <li><a href="#features"><i class="fas fa-chevron-right"></i> Features</a></li>
+          <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+          <li><a href="../dashboard.html"><i class="fas fa-chevron-right"></i> Dashboard</a></li>
+          <li><a href="../payments.html"><i class="fas fa-chevron-right"></i> Payment History</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Server Status</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources Links -->
+      <div class="footer-section">
+        <h4 class="footer-heading">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+          <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> API Reference</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal Links -->
+      <div class="footer-section">
+        <h4 class="footer-heading">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Refund Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> GDPR</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div class="footer-section footer-newsletter">
+        <h4 class="footer-heading">Stay Updated</h4>
+        <p class="newsletter-text">Subscribe to our newsletter for updates, security tips, and exclusive offers.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+
+        <div class="footer-contact">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:support@cyberkavach.com">support@cyberkavach.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+918001011019">1-800-201-1019</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Navi Mumbai, India</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright">© 2026 <strong>Cyber Kavach</strong>. All rights reserved. Made with <i
+            class="fas fa-heart" style="color: #ef4444;"></i> in India</p>
+        <div class="footer-badges">
+          <span class="badge"><i class="fas fa-shield-alt"></i> SSL Secured</span>
+          <span class="badge"><i class="fas fa-lock"></i> AES-256 Encrypted</span>
+          <span class="badge"><i class="fas fa-globe"></i> Global Network</span>
         </div>
       </div>
     </div>
-
-    <!-- Quick Links -->
-    <div class="footer-column">
-      <h4>Quick links</h4>
-      <ul>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Contact us</a></li>
-      </ul>
-    </div>
-
-    <!-- Social -->
-    <div class="footer-column">
-      <h4>Social</h4>
-      <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Youtube</a></li>
-      </ul>
-    </div>
-
-    <!-- Legal -->
-    <div class="footer-column">
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="#">Terms of service</a></li>
-        <li><a href="#">Privacy policy</a></li>
-        <li><a href="#">Cookie policy</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © 2026 cyber Kavach. All rights reserved.
-  </div>
-</footer>
+  </footer>
 
 
-<script src="js/script.js"></script>
+  <!-- Firebase SDK (Compat) -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+  <script src="js/script.js"></script>
 </body>
+
 </html>
